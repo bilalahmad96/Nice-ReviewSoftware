@@ -3,138 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desk Standee - NICE Computer Education | School of Coding, Yavatmal</title>
+  <title>Google Review Standee - NICE Computer Education | Yavatmal</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;600;700;800&family=Noto+Sans+Devanagari:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="assets/qrcode.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/jpeg" href="assets/original-logo.jpg">
   <style>
     body {
-      font-family: 'Plus Jakarta Sans', 'Inter', 'Noto Sans Devanagari', sans-serif;
+      font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
+
+    .google-gradient-frame {
+      background: linear-gradient(135deg, #4285F4 0%, #EA4335 34%, #FBBC05 68%, #34A853 100%);
+      padding: 4px;
+      border-radius: 26px;
+      box-shadow: 0 12px 30px -8px rgba(15, 23, 42, 0.14);
+    }
+
+    .google-gradient-inner {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #standeeQr img,
+    #standeeQr canvas {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .dot-blue { background-color: #4285F4; }
+    .dot-red { background-color: #EA4335; }
+    .dot-yellow { background-color: #FBBC05; }
+    .dot-green { background-color: #34A853; }
+
     @media print {
       .no-print {
         display: none !important;
       }
       body {
-        background: white;
-        padding: 0;
+        background: #ffffff !important;
+        padding: 0 !important;
+        margin: 0 !important;
       }
       .standee-container {
         box-shadow: none !important;
-        border: 2px solid #059669 !important;
+        border: 1px solid #e2e8f0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
       }
     }
   </style>
 </head>
 <body class="bg-slate-100 min-h-screen p-4 sm:p-8 flex flex-col items-center justify-center">
 
-  <!-- Print Button Bar (Hidden in Print) -->
-  <div class="no-print mb-6 flex gap-4">
-    <button onclick="window.print()" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg transition flex items-center gap-2">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+  <!-- Top Print Action Bar (Hidden on Print) -->
+  <div class="no-print mb-6 flex flex-wrap justify-center gap-3">
+    <button type="button" onclick="window.print()" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg transition flex items-center gap-2 cursor-pointer">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
       </svg>
-      Print Desk Standee (A4/A5)
+      <span>Print Desk Standee (A4 / A5)</span>
     </button>
-    <a href="index.html" class="px-6 py-3 bg-white hover:bg-slate-50 text-slate-700 font-bold rounded-xl border border-slate-300 shadow transition flex items-center gap-2">
-      ← Back to Review App
+    <a href="index.html" class="px-5 py-3 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs sm:text-sm rounded-xl border border-slate-300 shadow-xs transition flex items-center gap-2">
+      <span>← Back to Review App</span>
     </a>
   </div>
 
-  <!-- STANDEE CARD -->
-  <div class="standee-container bg-white w-full max-w-md rounded-3xl shadow-2xl border-4 border-emerald-600 overflow-hidden text-center relative">
-    
-    <!-- Header Top Strip -->
-    <div class="bg-gradient-to-r from-emerald-800 via-emerald-700 to-green-900 text-white py-3 px-4">
-      <div class="text-[11px] uppercase tracking-widest font-extrabold text-emerald-200">अधिकृत प्रशिक्षण संस्था / IT &amp; Coding Training</div>
-      <div class="text-base font-bold tracking-wider">
-        <span class="brand-nice-arial text-emerald-300">NICE</span> <span class="brand-secondary-font text-white">COMPUTER EDUCATION</span>
+  <!-- STANDEE ARTWORK CARD -->
+  <div class="standee-container bg-white w-full max-w-[460px] rounded-3xl shadow-xl border border-slate-200 px-6 sm:px-8 pt-5 pb-6 text-center relative overflow-hidden">
+
+    <!-- Top-Left & Top-Right Google Color Dots -->
+    <div class="flex items-center justify-between mb-2">
+      <div class="flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full dot-blue"></span>
+        <span class="w-2 h-2 rounded-full dot-red"></span>
+        <span class="w-2 h-2 rounded-full dot-yellow"></span>
+        <span class="w-2 h-2 rounded-full dot-green"></span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full dot-blue"></span>
+        <span class="w-2 h-2 rounded-full dot-red"></span>
+        <span class="w-2 h-2 rounded-full dot-yellow"></span>
+        <span class="w-2 h-2 rounded-full dot-green"></span>
       </div>
     </div>
 
-    <div class="p-6">
-      
-      <!-- Brand Logo -->
-      <div class="flex justify-center mb-4">
-        <div class="brand-lockup-container">
-          <img src="assets/original-logo.jpg" alt="NICE Logo" class="brand-logo-img" style="width: 50px; height: 50px; border-radius: 14px;">
-          <div class="brand-text-block text-left">
-            <div class="brand-title-row">
-              <span class="brand-nice-text" style="font-size: 24px;">NICE</span>
-              <span class="brand-computer-edu-text" style="font-size: 13px;">COMPUTER EDUCATION</span>
-            </div>
-            <div class="brand-tagline-text">
-              <span>SCHOOL OF CODING</span>
-              <span class="text-slate-300">•</span>
-              <span class="text-slate-500 font-semibold">YAVATMAL</span>
-            </div>
-          </div>
-        </div>
+    <!-- Brand Logo & Institutional Header -->
+    <div class="flex flex-col items-center">
+      <img src="assets/original-logo.jpg" alt="NICE Computer Education Logo" class="w-13 h-13 rounded-2xl object-cover shadow-md border border-emerald-100 mb-3" style="width: 52px; height: 52px;">
+
+      <div class="flex items-baseline justify-center gap-2 whitespace-nowrap">
+        <span class="brand-nice-arial text-[#064E3B] text-2xl sm:text-[26px] leading-none">NICE</span>
+        <span class="font-extrabold text-[#0f172a] text-base sm:text-[17px] tracking-wide uppercase leading-none">COMPUTER EDUCATION</span>
       </div>
 
-      <!-- Main Heading -->
-      <div class="inline-block bg-emerald-50 text-emerald-800 text-xs font-black uppercase px-3 py-1 rounded-full mb-3 tracking-wide">
-        ⭐ Share Your Review in 10 Seconds ⭐
+      <div class="mt-2.5 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[10px] font-extrabold tracking-widest text-emerald-800 uppercase">
+        <svg class="w-3.5 h-3.5 text-emerald-700" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13.09L4.67 12.1 4 12.46V16c0 2.76 3.58 5 8 5s8-2.24 8-5v-3.54l-.67-.36L12 16.09z"/>
+        </svg>
+        <span>SCHOOL OF CODING • OFFICIAL IT TRAINING CENTER</span>
       </div>
+    </div>
 
-      <h1 class="text-2xl font-black text-slate-900 leading-tight">
-        Loved Learning With Us?
+    <!-- Google Reviews Title -->
+    <div class="mt-6 mb-5">
+      <div class="text-2xl sm:text-[26px] font-extrabold tracking-tight leading-none">
+        <span style="color:#4285F4;">G</span><span style="color:#EA4335;">o</span><span style="color:#FBBC05;">o</span><span style="color:#4285F4;">g</span><span style="color:#34A853;">l</span><span style="color:#EA4335;">e</span>
+        <span class="text-slate-800 ml-1">Reviews</span>
+      </div>
+      <h1 class="mt-2 text-base sm:text-lg font-black text-slate-900 tracking-wide uppercase">
+        SCAN TO LEAVE US A REVIEW
       </h1>
-      <p class="text-sm font-semibold text-slate-600 mt-1">
-        तुमचा मौल्यवान अभिप्राय Google वर शेअर करा!
+    </div>
+
+    <!-- QR Code with 4-Color Google Gradient Frame -->
+    <div class="flex justify-center">
+      <div class="google-gradient-frame">
+        <div class="google-gradient-inner">
+          <div id="standeeQr"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Camera Instruction Pill & Live Link -->
+    <div class="mt-5 flex flex-col items-center">
+      <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#0f172a] text-white text-xs font-bold shadow-md">
+        <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <span>Point Your Phone Camera to Scan</span>
+      </div>
+      <p class="mt-2 text-[11px] font-semibold text-slate-500 tracking-wide">
+        nice-googlereviews.vercel.app
       </p>
+    </div>
 
-      <!-- 5 Golden Stars Display -->
-      <div class="text-amber-400 text-2xl my-2 tracking-wider">
-        ★★★★★
+    <!-- 5 Golden Stars & Thank You -->
+    <div class="mt-6 mb-5">
+      <div class="flex justify-center items-center gap-1.5 text-amber-400 text-lg mb-1.5">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
       </div>
+      <div class="text-base font-black text-slate-900 tracking-wider uppercase">THANK YOU</div>
+      <p class="text-[11px] font-medium text-slate-500 mt-0.5">
+        We appreciate your valuable feedback &amp; support!
+      </p>
+    </div>
 
-      <!-- QR Code Box -->
-      <div class="my-4 inline-block bg-white p-5 rounded-2xl border-2 border-emerald-500 shadow-md">
-        <div id="standeeQr" class="flex justify-center"></div>
-        <p class="text-[11px] font-bold text-emerald-700 mt-2 tracking-wider uppercase">Scan with Phone Camera</p>
+    <!-- Clean Footer Contact Strip -->
+    <div class="pt-4 border-t border-slate-200 text-center space-y-1">
+      <div class="text-[11px] font-extrabold text-[#064E3B] tracking-wider uppercase">
+        NICE COMPUTER EDUCATION • YAVATMAL
       </div>
-
-      <!-- 3 Simple Steps -->
-      <div class="bg-emerald-50/70 border border-emerald-100 rounded-2xl p-4 text-left text-xs space-y-2 mb-4">
-        <div class="flex items-center gap-2.5">
-          <span class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center shrink-0 text-[10px]">1</span>
-          <span class="font-medium text-slate-700">Scan QR &amp; select your course (C, C++, Java, Python, Web, etc.)</span>
-        </div>
-        <div class="flex items-center gap-2.5">
-          <span class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center shrink-0 text-[10px]">2</span>
-          <span class="font-medium text-slate-700">AI automatically crafts a professional student review</span>
-        </div>
-        <div class="flex items-center gap-2.5">
-          <span class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center shrink-0 text-[10px]">3</span>
-          <span class="font-medium text-slate-700">1-Tap <strong>Copy &amp; Post on Google Maps</strong></span>
-        </div>
+      <div class="text-[10px] text-slate-600 flex items-center justify-center gap-1 leading-relaxed">
+        <svg class="w-3 h-3 text-rose-500 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        <span>Plot No. 45, Bharathi Layout, Near Darda Nagar, Wadgaon, Yavatmal – 445001</span>
       </div>
-
-      <!-- Institute Details -->
-      <div class="text-[11px] text-slate-600 border-t border-slate-200 pt-3 space-y-1">
-        <p class="font-bold text-slate-900">NICE Computer Education – School of Coding</p>
-        <p>📍 Plot No. 45, Bharathi Layout, Near Darda Nagar, Wadgaon, Yavatmal – 445001</p>
-        <p class="font-semibold text-emerald-700">📞 Shailesh Sambhe: +91 97675 41889 &nbsp;|&nbsp; Namrata Sambhe: +91 97637 17418 (Call &amp; WhatsApp)</p>
+      <div class="text-[9.5px] font-medium text-slate-600 leading-relaxed">
+        Shailesh Sambhe: +91 97675 41889 • Namrata Sambhe: +91 97637 17418 (Call &amp; WhatsApp) • computereducation.nice@gmail.com
       </div>
-
     </div>
 
   </div>
 
   <script>
-    // Dynamically target the deployed site URL (e.g. your new Vercel URL)
-    const targetUrl = window.location.protocol.startsWith('http')
-      ? window.location.origin + '/'
-      : 'https://nice-review-software.vercel.app/';
+    // Official live Vercel URL attached to QR barcode
+    const targetUrl = 'https://nice-googlereviews.vercel.app/';
     new QRCode(document.getElementById('standeeQr'), {
       text: targetUrl,
-      width: 170,
-      height: 170,
-      colorDark: "#064e3b",
-      colorLight: "#ffffff",
+      width: 196,
+      height: 196,
+      colorDark: '#0f172a',
+      colorLight: '#ffffff',
       correctLevel: QRCode.CorrectLevel.H
     });
   </script>
