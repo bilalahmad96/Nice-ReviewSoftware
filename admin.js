@@ -269,6 +269,278 @@ function closeStandeeModal() {
   if (modal) modal.classList.add('hidden');
 }
 
+// Helper: Draw rounded rectangle path on Canvas
+function roundRectPath(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+function loadImageAsync(src) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => resolve(img);
+    img.onerror = () => reject(new Error('Failed to load ' + src));
+    img.src = src;
+  });
+}
+
+// Render & Download Full Standee Artwork as High-Resolution PNG (1400 x 1980)
+async function downloadStandeeAsPng() {
+  const btn = document.getElementById('downloadStandeePngBtn');
+  const originalHtml = btn ? btn.innerHTML : '';
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '<span>⏳ Generating HD Standee PNG...</span>';
+  }
+
+  try {
+    if (document.fonts && document.fonts.ready) {
+      await document.fonts.ready;
+    }
+
+    const [logoImg, qrImg] = await Promise.all([
+      loadImageAsync('assets/original-logo.jpg'),
+      loadImageAsync('nice-googlereviews-qr.png')
+    ]);
+
+    const W = 1400;
+    const H = 1980;
+    const canvas = document.createElement('canvas');
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext('2d');
+
+    // White Card Background
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, W, H);
+
+    // Subtle outer border
+    ctx.strokeStyle = '#e2e8f0';
+    ctx.lineWidth = 4;
+    ctx.strokeRect(2, 2, W - 4, H - 4);
+
+    // Top-left & Top-right Google 4-color dots
+    const dotColors = ['#4285F4', '#EA4335', '#FBBC05', '#34A853'];
+    dotColors.forEach((color, idx) => {
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(64 + idx * 34, 62, 10, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(W - 64 - (3 - idx) * 34, 62, 10, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    // Centered NICE Logo (Rounded square)
+    const logoSize = 144;
+    const logoX = (W - logoSize) / 2;
+    const logoY = 82;
+    ctx.save();
+    roundRectPath(ctx, logoX, logoY, logoSize, logoSize, 32);
+    ctx.clip();
+    ctx.drawImage(logoImg, logoX, logoY, logoSize, logoSize);
+    ctx.restore();
+    ctx.strokeStyle = '#d1fae5';
+    ctx.lineWidth = 3;
+    roundRectPath(ctx, logoX, logoY, logoSize, logoSize, 32);
+    ctx.stroke();
+
+    // Brand Title: NICE (Arial Black) + COMPUTER EDUCATION (Plus Jakarta Sans)
+    const titleY = 294;
+    ctx.textBaseline = 'alphabetic';
+    ctx.font = '900 72px Arial, Helvetica, sans-serif';
+    const niceW = ctx.measureText('NICE').width;
+    ctx.font = '800 46px "Plus Jakarta Sans", Inter, sans-serif';
+    const eduW = ctx.measureText('COMPUTER EDUCATION').width;
+    const gap = 22;
+    const startX = (W - (niceW + gap + eduW)) / 2;
+
+    ctx.fillStyle = '#064E3B';
+    ctx.font = '900 72px Arial, Helvetica, sans-serif';
+    ctx.fillText('NICE', startX, titleY);
+
+    ctx.fillStyle = '#0f172a';
+    ctx.font = '800 46px "Plus Jakarta Sans", Inter, sans-serif';
+    ctx.fillText('COMPUTER EDUCATION', startX + niceW + gap, titleY);
+
+    // Subtitle Pill Badge
+    const pillText = 'SCHOOL OF CODING  •  OFFICIAL IT TRAINING CENTER';
+    ctx.font = '800 24px "Plus Jakarta Sans", Inter, sans-serif';
+    const pillW = ctx.measureText(pillText).width + 92;
+    const pillH = 56;
+    const pillX = (W - pillW) / 2;
+    const pillY = 328;
+
+    ctx.fillStyle = '#ecfdf5';
+    roundRectPath(ctx, pillX, pillY, pillW, pillH, 28);
+    ctx.fill();
+    ctx.strokeStyle = '#a7f3d0';
+    ctx.lineWidth = 2.5;
+    roundRectPath(ctx, pillX, pillY, pillW, pillH, 28);
+    ctx.stroke();
+
+    ctx.fillStyle = '#065f46';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(pillText, W / 2, pillY + pillH / 2 + 1);
+
+    // Multi-colored "Google Reviews" Title
+    const gLetters = [
+      { ch: 'G', color: '#4285F4' },
+      { ch: 'o', color: '#EA4335' },
+      { ch: 'o', color: '#FBBC05' },
+      { ch: 'g', color: '#4285F4' },
+      { ch: 'l', color: '#34A853' },
+      { ch: 'e', color: '#EA4335' }
+    ];
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+    ctx.font = '800 72px "Plus Jakarta Sans", Inter, sans-serif';
+    const googleWidth = gLetters.reduce((acc, item) => acc + ctx.measureText(item.ch).width, 0);
+    const reviewsText = ' Reviews';
+    const reviewsWidth = ctx.measureText(reviewsText).width;
+    let gx = (W - (googleWidth + reviewsWidth)) / 2;
+    const gy = 486;
+
+    gLetters.forEach((item) => {
+      ctx.fillStyle = item.color;
+      ctx.fillText(item.ch, gx, gy);
+      gx += ctx.measureText(item.ch).width;
+    });
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText(reviewsText, gx, gy);
+
+    // "SCAN TO LEAVE US A REVIEW"
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#0f172a';
+    ctx.font = '900 46px "Plus Jakarta Sans", Inter, sans-serif';
+    ctx.fillText('SCAN TO LEAVE US A REVIEW', W / 2, 558);
+
+    // 4-Color Google Gradient Frame around QR Code
+    const frameSize = 740;
+    const frameX = (W - frameSize) / 2;
+    const frameY = 626;
+    const grad = ctx.createLinearGradient(frameX, frameY, frameX + frameSize, frameY + frameSize);
+    grad.addColorStop(0, '#4285F4');
+    grad.addColorStop(0.35, '#EA4335');
+    grad.addColorStop(0.68, '#FBBC05');
+    grad.addColorStop(1, '#34A853');
+
+    ctx.fillStyle = grad;
+    roundRectPath(ctx, frameX, frameY, frameSize, frameSize, 64);
+    ctx.fill();
+
+    // Inner White QR Box
+    const borderThick = 14;
+    const innerSize = frameSize - borderThick * 2;
+    const innerX = frameX + borderThick;
+    const innerY = frameY + borderThick;
+    ctx.fillStyle = '#ffffff';
+    roundRectPath(ctx, innerX, innerY, innerSize, innerSize, 52);
+    ctx.fill();
+
+    // Draw High-Res QR Code inside
+    const qrPad = 36;
+    const qrDrawSize = innerSize - qrPad * 2;
+    ctx.drawImage(qrImg, innerX + qrPad, innerY + qrPad, qrDrawSize, qrDrawSize);
+
+    // Dark Camera Pill Below QR
+    const camText = 'Point Your Phone Camera to Scan';
+    ctx.font = '700 30px "Plus Jakarta Sans", Inter, sans-serif';
+    const camPillW = ctx.measureText(camText).width + 110;
+    const camPillH = 74;
+    const camPillX = (W - camPillW) / 2;
+    const camPillY = 1420;
+
+    ctx.fillStyle = '#0f172a';
+    roundRectPath(ctx, camPillX, camPillY, camPillW, camPillH, 37);
+    ctx.fill();
+
+    ctx.fillStyle = '#ffffff';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(camText, W / 2, camPillY + camPillH / 2 + 1);
+
+    // Live URL label below dark pill
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillStyle = '#475569';
+    ctx.font = '600 28px "Plus Jakarta Sans", Inter, sans-serif';
+    ctx.fillText('nice-googlereviews.vercel.app', W / 2, 1546);
+
+    // 5 Golden Stars
+    ctx.fillStyle = '#fbbf24';
+    ctx.font = '700 50px Arial, sans-serif';
+    ctx.fillText('★  ★  ★  ★  ★', W / 2, 1656);
+
+    // THANK YOU
+    ctx.fillStyle = '#0f172a';
+    ctx.font = '900 46px "Plus Jakarta Sans", Inter, sans-serif';
+    ctx.fillText('THANK YOU', W / 2, 1726);
+
+    ctx.fillStyle = '#475569';
+    ctx.font = '500 28px "Plus Jakarta Sans", Inter, sans-serif';
+    ctx.fillText('We appreciate your valuable feedback & support!', W / 2, 1776);
+
+    // Footer Divider
+    ctx.strokeStyle = '#e2e8f0';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(80, 1832);
+    ctx.lineTo(W - 80, 1832);
+    ctx.stroke();
+
+    // Footer Text
+    ctx.fillStyle = '#064E3B';
+    ctx.font = '800 27px "Plus Jakarta Sans", Inter, sans-serif';
+    ctx.fillText('NICE COMPUTER EDUCATION • YAVATMAL', W / 2, 1876);
+
+    ctx.fillStyle = '#475569';
+    ctx.font = '500 23px "Plus Jakarta Sans", Inter, sans-serif';
+    ctx.fillText('Plot No. 45, Bharathi Layout, Near Darda Nagar, Wadgaon, Yavatmal – 445001', W / 2, 1916);
+
+    ctx.fillStyle = '#334155';
+    ctx.font = '600 22px "Plus Jakarta Sans", Inter, sans-serif';
+    ctx.fillText('Shailesh Sambhe: +91 97675 41889 • Namrata Sambhe: +91 97637 17418 (Call & WhatsApp) • computereducation.nice@gmail.com', W / 2, 1952);
+
+    // Export as PNG and trigger download
+    canvas.toBlob((blob) => {
+      if (!blob) {
+        alert('Could not generate PNG. Please try opening via your live Vercel link.');
+        return;
+      }
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'NICE_Google_Review_Standee.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+    }, 'image/png');
+
+    if (btn) {
+      btn.innerHTML = '<span>✓ Standee PNG Downloaded!</span>';
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = originalHtml;
+      }, 2200);
+    }
+  } catch (err) {
+    console.error('Standee PNG export failed:', err);
+    alert('Unable to export standee PNG in this view. Try printing via "Open Fullscreen & Print" or opening from your live site.');
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = originalHtml;
+    }
+  }
+}
+
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeStandeeModal();
 });
