@@ -1,0 +1,617 @@
+/* NICE Computer Education - School of Coding Theme */
+/* Short & Executive Architectural Styling */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-green: #059669;
+  --primary-dark: #064e3b;
+  --primary-light: #ecfdf5;
+  --primary-glow: rgba(5, 150, 105, 0.2);
+  --accent-mint: #10b981;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --bg-light: #f8fafc;
+  --card-bg: #ffffff;
+  --gold-star: #fbbf24;
+  --gold-star-active: #f59e0b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+svg.w-3\.5 { width: 14px; height: 14px; }
+svg.w-4 { width: 16px; height: 16px; }
+svg.w-5 { width: 20px; height: 20px; }
+svg.w-6 { width: 24px; height: 24px; }
+svg.w-12 { width: 48px; height: 48px; }
+
+/* Brand Typography Rules - Strict Client Specs: Only NICE in Arial Bold */
+.brand-nice-arial {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.01em;
+}
+
+.brand-secondary-font {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+}
+
+.brand-tagline-font {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em;
+}
+
+/* Executive Brand Lockup */
+.brand-lockup-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.brand-logo-img {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid #a7f3d0;
+  box-shadow: 0 1px 4px rgba(6, 78, 59, 0.12);
+}
+
+.brand-text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  line-height: 1;
+}
+
+.brand-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.brand-nice-text {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
+  font-weight: 900 !important;
+  color: #064E3B;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.brand-computer-edu-text {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+  font-weight: 800 !important;
+  color: #1e293b;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brand-tagline-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+  font-weight: 800 !important;
+  color: #047857;
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+/* Header Institutional Top Bar */
+.top-institutional-bar {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.header-inner-wrap {
+  width: 100%;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.header-contacts-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  justify-content: flex-end;
+}
+
+.director-header-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background-color: #ecfdf5;
+  color: #022c22;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid #86efac;
+  box-shadow: 0 1px 2px rgba(5, 150, 105, 0.05);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.director-header-pill .pill-name {
+  color: #334155;
+  font-weight: 600;
+}
+
+.director-header-pill .pill-call {
+  color: #047857;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  transition: color 0.15s;
+}
+.director-header-pill .pill-call:hover {
+  color: #064e3b;
+}
+
+.director-header-pill .pill-sep {
+  color: #cbd5e1;
+}
+
+.director-header-pill .pill-wa {
+  color: #059669;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  transition: color 0.15s;
+}
+.director-header-pill .pill-wa:hover {
+  color: #047857;
+}
+
+.mobile-contacts-trigger-btn {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background-color: #ecfdf5;
+  color: #064e3b;
+  font-size: 12px;
+  font-weight: 800;
+  border: 1px solid #86efac;
+  box-shadow: 0 1px 2px rgba(5, 150, 105, 0.05);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.1s;
+}
+.mobile-contacts-trigger-btn:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 960px) {
+  .director-header-pill {
+    display: none !important;
+  }
+  .mobile-contacts-trigger-btn {
+    display: inline-flex !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-inner-wrap {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  .brand-lockup-container {
+    gap: 8px;
+  }
+  .brand-logo-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+  }
+  .brand-nice-text {
+    font-size: 19px;
+  }
+  .brand-computer-edu-text {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+  }
+  .brand-tagline-text {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    margin-top: 2.5px;
+  }
+  .mobile-contacts-trigger-btn {
+    padding: 5px 9px;
+    font-size: 11px;
+    gap: 4px;
+  }
+}
+
+/* Remove native browser arrow on custom styled course select */
+#allCoursesSelect {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Executive Contact Cards */
+.institute-branding-footer-row {
+  padding: 20px 24px;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.institute-top-brand-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .institute-branding-footer-row {
+    padding: 16px;
+    gap: 14px;
+  }
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.contact-card-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-card-box:hover {
+  border-color: #6ee7b7;
+  box-shadow: 0 6px 18px rgba(5, 150, 105, 0.08);
+  transform: translateY(-1px);
+}
+
+.contact-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #065f46 0%, #059669 100%);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.22);
+}
+
+.contact-details {
+  min-width: 0;
+}
+
+.contact-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+}
+
+.contact-phone-num {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.contact-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.btn-contact-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.btn-contact-action:hover {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.16);
+}
+
+.btn-contact-action.wa-btn {
+  background: #ecfdf5;
+  color: #047857;
+  border-color: #a7f3d0;
+}
+
+.btn-contact-action.wa-btn:hover {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.28);
+}
+
+/* Card Styles */
+.brand-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-card:hover {
+  box-shadow: 0 6px 20px -3px rgba(5, 150, 105, 0.07);
+  border-color: #cbd5e1;
+}
+
+.brand-button-primary {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px 0 rgba(5, 150, 105, 0.28);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-button-primary:hover {
+  background: linear-gradient(135deg, #047857 0%, #064e3b 100%);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.38);
+  transform: translateY(-1px);
+}
+
+.brand-button-primary:active {
+  transform: translateY(1px);
+}
+
+/* Pulsing highlight for Google CTA button */
+@keyframes pulse-subtle {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(5, 150, 105, 0.3);
+  }
+  50% {
+    box-shadow: 0 6px 22px rgba(5, 150, 105, 0.55);
+  }
+}
+
+.pulse-cta {
+  animation: pulse-subtle 2.5s infinite;
+}
+
+/* Custom Chip Styles */
+.chip-btn {
+  border: 1.5px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #334155;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.chip-btn:hover {
+  border-color: #a7f3d0;
+  background-color: #f0fdf4;
+  color: #059669;
+}
+
+.chip-btn.active {
+  border-color: #059669;
+  background-color: #ecfdf5;
+  color: #065f46;
+  font-weight: 700;
+  box-shadow: 0 1px 4px rgba(5, 150, 105, 0.12);
+}
+
+/* Review Mode Selector Cards (Direct vs AI Generator) */
+.mode-card {
+  padding: 0.9rem 1rem;
+  border-radius: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: 1.5px solid #cbd5e1;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.mode-card .mode-icon {
+  font-size: 1.35rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.65rem;
+  background-color: #f1f5f9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.mode-card .mode-title {
+  font-weight: 800;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: #0f172a;
+}
+
+.mode-card .mode-sub {
+  font-size: 0.72rem;
+  font-weight: 500;
+  margin-top: 0.18rem;
+  line-height: 1.3;
+  color: #475569;
+}
+
+.mode-card:hover:not(.active) {
+  border-color: #059669;
+  background-color: #f0fdf4;
+}
+
+.mode-card.active {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  border-color: #047857;
+  box-shadow: 0 4px 14px 0 rgba(5, 150, 105, 0.26);
+}
+
+.mode-card.active .mode-icon {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+.mode-card.active .mode-title {
+  color: #ffffff;
+}
+
+.mode-card.active .mode-sub {
+  color: #ecfdf5;
+}
+
+/* Voice Recording Pulse */
+@keyframes voice-ring {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(225, 29, 72, 0);
+  }
+}
+
+.voice-btn-recording {
+  background-color: #ffe4e6 !important;
+  border-color: #f43f5e !important;
+  color: #be123c !important;
+  animation: voice-ring 1.4s infinite;
+}
+
+/* Star rating interaction */
+.star-btn {
+  font-size: 2.25rem;
+  color: #cbd5e1;
+  transition: transform 0.15s ease, color 0.15s ease;
+  cursor: pointer;
+  user-select: none;
+  background: transparent;
+  border: none;
+  line-height: 1;
+}
+
+.star-btn.active {
+  color: var(--gold-star);
+  text-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.star-btn:hover {
+  transform: scale(1.15);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Printable Standee Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: #ffffff !important;
+    padding: 0 !important;
+  }
+}

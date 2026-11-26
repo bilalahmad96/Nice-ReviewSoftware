@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>NICE Computer Education - Student Review Assistant | School of Coding, Yavatmal</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans, Inter & Noto Sans Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/jpeg" href="assets/original-logo.jpg">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#f8fafc] min-h-screen text-slate-800 pb-16 font-sans antialiased">
+
+  <!-- TOP INSTITUTIONAL BAR -->
+  <header class="top-institutional-bar">
+    <div class="header-inner-wrap">
+
+      <!-- Brand & Secret 5-Tap Admin Trigger -->
+      <div class="brand-lockup-container cursor-pointer" id="brandLogoClickable" title="NICE Computer Education - School of Coding (Tap 5x for Staff Admin)">
+        <img src="assets/original-logo.jpg" alt="NICE Logo" class="brand-logo-img">
+        <div class="brand-text-block">
+          <div class="brand-title-row">
+            <span class="brand-nice-text">NICE</span>
+            <span class="brand-computer-edu-text">COMPUTER EDUCATION</span>
+          </div>
+          <div class="brand-tagline-text">
+            <span>SCHOOL OF CODING</span>
+            <span class="text-slate-300">•</span>
+            <span class="text-slate-500 font-semibold">YAVATMAL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Header Direct Contact Links (Both Directors with Equal Importance) -->
+      <div class="header-contacts-group">
+        <div class="director-header-pill">
+          <span class="pill-name">Shailesh Sambhe:</span>
+          <a href="tel:+919767541889" class="pill-call" title="Call Shailesh Sambhe: +91 97675 41889">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span>9767541889</span>
+          </a>
+          <span class="pill-sep">|</span>
+          <a href="https://wa.me/919767541889?text=Hello%20Shailesh%20Sir,%20I%20have%20an%20inquiry%20about%20courses%20at%20NICE%20Computer%20Education" target="_blank" class="pill-wa" title="WhatsApp Shailesh Sambhe: +91 97675 41889">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.797 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.172.109-1.891-.125-.438-.141-1-.328-1.719-.641-3.016-1.297-4.984-4.328-5.141-4.531-.156-.203-1.234-1.641-1.234-3.125s.781-2.219 1.063-2.516c.281-.297.609-.375.813-.375.203 0 .406.016.578.016.188 0 .438-.078.688.516.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.141.328-.281.5-.141.172-.297.375-.422.5-.141.141-.281.297-.125.578.156.281.703 1.156 1.516 1.875 1.047.922 1.922 1.203 2.203 1.344.281.141.438.125.609-.063.172-.188.703-.828.891-1.109.188-.281.375-.234.625-.141.25.094 1.625.766 1.906.906.281.141.469.203.531.328.063.125.063.703-.188 1.406z"/></svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="director-header-pill">
+          <span class="pill-name">Namrata Sambhe:</span>
+          <a href="tel:+919763717418" class="pill-call" title="Call Namrata Sambhe: +91 97637 17418">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span>9763717418</span>
+          </a>
+          <span class="pill-sep">|</span>
+          <a href="https://wa.me/919763717418?text=Hello%20Namrata%20Madam,%20I%20have%20an%20inquiry%20about%20courses%20at%20NICE%20Computer%20Education" target="_blank" class="pill-wa" title="WhatsApp Namrata Sambhe: +91 97637 17418">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.797 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.172.109-1.891-.125-.438-.141-1-.328-1.719-.641-3.016-1.297-4.984-4.328-5.141-4.531-.156-.203-1.234-1.641-1.234-3.125s.781-2.219 1.063-2.516c.281-.297.609-.375.813-.375.203 0 .406.016.578.016.188 0 .438-.078.688.516.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.141.328-.281.5-.141.172-.297.375-.422.5-.141.141-.281.297-.125.578.156.281.703 1.156 1.516 1.875 1.047.922 1.922 1.203 2.203 1.344.281.141.438.125.609-.063.172-.188.703-.828.891-1.109.188-.281.375-.234.625-.141.25.094 1.625.766 1.906.906.281.141.469.203.531.328.063.125.063.703-.188 1.406z"/></svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Mobile Quick Contact Action (< 960px) -->
+        <button type="button" onclick="document.getElementById('mobileContactModal').classList.remove('hidden')" class="mobile-contacts-trigger-btn" title="Direct Contact: Shailesh Sambhe & Namrata Sambhe">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span>Contacts</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-3xl mx-auto px-4 mt-6 sm:mt-8 space-y-5">
+
+    <!-- HERO BANNER -->
+    <div class="text-center space-y-1.5 mb-1">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/80 text-emerald-900 text-[11px] font-extrabold uppercase tracking-wider">
+        <span>School of Coding • Google Review Assistant</span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+        <span class="brand-nice-arial text-[#064E3B]">NICE</span> <span class="brand-secondary-font text-slate-800">Computer Education</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
+        Share your student feedback in seconds — post a quick 5-star rating or draft/speak your review for Google Maps!
+      </p>
+    </div>
+
+    <!-- STEP 1: STAR RATING (Default 5 Stars) + 2 MODE OPTIONS -->
+    <div class="brand-card p-5 sm:p-6 text-center">
+      <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 mb-2">Step 1 • How was your learning experience?</div>
+
+      <div class="flex justify-center items-center gap-2 my-2" id="starContainer">
+        <button type="button" class="star-btn active" data-value="1" aria-label="1 Star">★</button>
+        <button type="button" class="star-btn active" data-value="2" aria-label="2 Stars">★</button>
+        <button type="button" class="star-btn active" data-value="3" aria-label="3 Stars">★</button>
+        <button type="button" class="star-btn active" data-value="4" aria-label="4 Stars">★</button>
+        <button type="button" class="star-btn active" data-value="5" aria-label="5 Stars">★</button>
+      </div>
+
+      <div id="ratingLabel" class="font-extrabold text-slate-800 text-base mt-1">5 Star Rating Selected ⭐</div>
+      <div id="ratingHelp" class="text-xs text-slate-500 mt-0.5">Choose how you would like to share your review on Google:</div>
+
+      <!-- 2 REVIEW MODE OPTIONS (Shown for 4 & 5 Stars; AI Generator selected by default) -->
+      <div id="reviewModeSelector" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 pt-4 border-t border-slate-100 text-left">
+        <button type="button" id="modeAiBtn" class="mode-card active" data-mode="ai">
+          <span class="mode-icon">✨</span>
+          <div class="min-w-0">
+            <div class="mode-title">AI Review Generator</div>
+            <div class="mode-sub">Auto-draft 3–5 line review or speak via voice</div>
+          </div>
+        </button>
+
+        <button type="button" id="modeDirectBtn" class="mode-card" data-mode="direct">
+          <span class="mode-icon">⭐</span>
+          <div class="min-w-0">
+            <div class="mode-title">Direct 5-Star Review</div>
+            <div class="mode-sub">Only star rating on Google — no text needed</div>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- GRIEVANCE CONTAINER (Shows only if 1, 2, or 3 stars selected) -->
+    <div id="grievanceContainer" class="hidden brand-card p-6 border-amber-300 bg-amber-50/40">
+      <div class="flex items-start gap-3.5">
+        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 mt-0.5">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+          </svg>
+        </div>
+        <div class="space-y-3 flex-1">
+          <div>
+            <h3 class="text-base font-bold text-slate-900">We Value Your Honest Feedback</h3>
+            <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+              Student satisfaction is our top commitment at NICE Computer Education. Please share details directly with the Director so we can resolve any issue immediately.
+            </p>
+          </div>
+          <div>
+            <textarea id="grievanceText" rows="3" class="w-full p-3 border border-amber-300 rounded-xl bg-white text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Please describe what went wrong or how we can improve your training..."></textarea>
+          </div>
+          <div>
+            <button type="button" id="submitGrievanceBtn" class="w-full sm:w-auto px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-xl transition shadow-xs">
+              📩 Submit Feedback to Director
+            </button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+            <!-- Shailesh Sambhe Direct Contact -->
+            <div class="bg-white border border-amber-200 rounded-xl p-2.5 shadow-2xs space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-extrabold text-xs text-slate-900">Shailesh Sambhe</span>
+                <span class="text-[10px] text-slate-500 font-medium">9767541889</span>
+              </div>
+              <div class="flex gap-2">
+                <a href="tel:+919767541889" class="flex-1 py-1.5 px-2 bg-slate-800 hover:bg-slate-900 text-white font-bold text-[11px] rounded-lg text-center flex items-center justify-center gap-1.5 transition">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  <span>Call</span>
+                </a>
+                <a href="https://wa.me/919767541889?text=Hello%20Shailesh%20Sir,%20I%20have%20feedback%20regarding%20my%20course%20at%20NICE%20Computer%20Education" target="_blank" class="flex-1 py-1.5 px-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] rounded-lg text-center flex items-center justify-center gap-1.5 transition shadow-2xs">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.797 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.172.109-1.891-.125-.438-.141-1-.328-1.719-.641-3.016-1.297-4.984-4.328-5.141-4.531-.156-.203-1.234-1.641-1.234-3.125s.781-2.219 1.063-2.516c.281-.297.609-.375.813-.375.203 0 .406.016.578.016.188 0 .438-.078.688.516.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.141.328-.281.5-.141.172-.297.375-.422.5-.141.141-.281.297-.125.578.156.281.703 1.156 1.516 1.875 1.047.922 1.922 1.203 2.203 1.344.281.141.438.125.609-.063.172-.188.703-.828.891-1.109.188-.281.375-.234.625-.141.25.094 1.625.766 1.906.906.281.141.469.203.531.328.063.125.063.703-.188 1.406z"/></svg>
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Namrata Sambhe Direct Contact -->
+            <div class="bg-white border border-amber-200 rounded-xl p-2.5 shadow-2xs space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="font-extrabold text-xs text-slate-900">Namrata Sambhe</span>
+                <span class="text-[10px] text-slate-500 font-medium">9763717418</span>
+              </div>
+              <div class="flex gap-2">
+                <a href="tel:+919763717418" class="flex-1 py-1.5 px-2 bg-slate-800 hover:bg-slate-900 text-white font-bold text-[11px] rounded-lg text-center flex items-center justify-center gap-1.5 transition">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  <span>Call</span>
+                </a>
+                <a href="https://wa.me/919763717418?text=Hello%20Namrata%20Madam,%20I%20have%20feedback%20regarding%20my%20course%20at%20NICE%20Computer%20Education" target="_blank" class="flex-1 py-1.5 px-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] rounded-lg text-center flex items-center justify-center gap-1.5 transition shadow-2xs">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.797 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.172.109-1.891-.125-.438-.141-1-.328-1.719-.641-3.016-1.297-4.984-4.328-5.141-4.531-.156-.203-1.234-1.641-1.234-3.125s.781-2.219 1.063-2.516c.281-.297.609-.375.813-.375.203 0 .406.016.578.016.188 0 .438-.078.688.516.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.141.328-.281.5-.141.172-.297.375-.422.5-.141.141-.281.297-.125.578.156.281.703 1.156 1.516 1.875 1.047.922 1.922 1.203 2.203 1.344.281.141.438.125.609-.063.172-.188.703-.828.891-1.109.188-.281.375-.234.625-.141.25.094 1.625.766 1.906.906.281.141.469.203.531.328.063.125.063.703-.188 1.406z"/></svg>
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POSITIVE FLOW CONTAINER (Active for 4 & 5 stars) -->
+    <div id="positiveFlowContainer" class="space-y-5">
+
+      <!-- DIRECT 5-STAR RATING PANEL (Visible when 'Direct 5-Star Review' mode is chosen) -->
+      <div id="directReviewContainer" class="hidden brand-card p-6 text-center border-emerald-200 bg-gradient-to-b from-emerald-50/40 to-white space-y-4">
+        <div class="w-12 h-12 mx-auto rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl shadow-xs">
+          ⭐
+        </div>
+        <div class="space-y-1">
+          <h2 class="text-lg font-extrabold text-slate-900">Quick 5-Star Google Rating</h2>
+          <p class="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+            No need to write any review! Tap the button below to open Google Reviews, select <strong>5 Stars</strong>, and tap <strong>Post</strong>.
+          </p>
+        </div>
+        <div class="max-w-md mx-auto">
+          <button type="button" id="directOpenGoogleBtn" class="brand-button-primary pulse-cta w-full py-4 px-6 rounded-xl font-black text-base flex items-center justify-center gap-2.5 transition">
+            <span>⭐</span>
+            <span>Post 5-Star Rating on Google</span>
+          </button>
+          <p class="text-[11px] text-slate-500 mt-2.5">
+            Opens official NICE Computer Education Google Review page directly.
+          </p>
+        </div>
+      </div>
+
+      <!-- AI REVIEW GENERATOR FLOW (Selected by default on page open) -->
+      <div id="aiBuilderContainer" class="space-y-5">
+
+        <!-- STEP 2: SPECIFIC COURSE SELECTION BAR -->
+        <div class="brand-card p-5 sm:p-6">
+          <div class="flex items-center justify-between mb-2.5">
+            <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Step 2 • Specific Course Selection Bar</div>
+            <span class="text-[10px] text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full font-extrabold border border-emerald-200">
+              16 Courses Ready
+            </span>
+          </div>
+
+          <div class="relative">
+            <select id="allCoursesSelect" class="w-full p-3 pl-10 pr-10 bg-white border-2 border-emerald-500 rounded-xl text-xs sm:text-sm font-bold text-slate-900 shadow-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none transition appearance-none cursor-pointer">
+              <!-- Dynamically populated via app.js -->
+            </select>
+            <div class="absolute left-3.5 top-1/2 -translate-y-1/2 text-emerald-600 pointer-events-none text-base">
+              🎓
+            </div>
+            <div class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none text-xs font-bold">
+              ▼
+            </div>
+          </div>
+          <p class="text-[11px] text-slate-500 mt-2">
+            Select the specific course you completed from the list above.
+          </p>
+        </div>
+
+        <!-- STEP 3: LAB OR CERTIFICATE PHOTO UPLOAD -->
+        <div class="brand-card p-5 sm:p-6">
+          <div class="flex items-center justify-between mb-1.5">
+            <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Step 3 • Add Lab / Certificate Photo (Optional)</div>
+            <span class="text-[10px] text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">Boosts Google Ranking 🚀</span>
+          </div>
+          <p class="text-xs text-slate-500 mb-3">
+            Attach a classroom, lab practice, or certificate photo to make your Google Review standout.
+          </p>
+
+          <!-- Upload Controls -->
+          <div id="photoUploadControls" class="grid grid-cols-2 gap-3">
+            <label class="cursor-pointer border-2 border-dashed border-emerald-200 hover:border-emerald-500 hover:bg-emerald-50/40 rounded-xl p-3.5 flex flex-col items-center justify-center text-center transition group">
+              <svg class="w-5 h-5 text-emerald-600 mb-1 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span class="text-xs font-bold text-slate-800">Take Instant Photo</span>
+              <span class="text-[10px] text-slate-400">Open Camera</span>
+              <input type="file" id="cameraInput" accept="image/*" capture="environment" class="hidden">
+            </label>
+
+            <label class="cursor-pointer border-2 border-dashed border-slate-200 hover:border-emerald-400 hover:bg-slate-50 rounded-xl p-3.5 flex flex-col items-center justify-center text-center transition group">
+              <svg class="w-5 h-5 text-slate-600 mb-1 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              <span class="text-xs font-bold text-slate-800">Choose from Gallery</span>
+              <span class="text-[10px] text-slate-400">Pick from Files</span>
+              <input type="file" id="galleryInput" accept="image/*" class="hidden">
+            </label>
+          </div>
+
+          <!-- Preview Box -->
+          <div id="photoPreviewBox" class="hidden mt-3 p-3 bg-emerald-50/60 border border-emerald-200 rounded-xl flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <img id="uploadedPhotoPreview" src="" alt="Student Photo Preview" class="w-14 h-14 object-cover rounded-lg border border-white shadow-xs">
+              <div>
+                <p class="text-xs font-bold text-slate-800">Photo Attached! 📸</p>
+                <p class="text-[11px] text-slate-500">Ready to upload on Google Reviews.</p>
+              </div>
+            </div>
+            <button type="button" id="removePhotoBtn" class="text-xs font-semibold text-rose-600 hover:text-rose-800 px-2.5 py-1 rounded-md bg-white border border-rose-200">
+              Remove
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 4: KEY LEARNING HIGHLIGHTS (Compact) -->
+        <div class="brand-card p-5 sm:p-6">
+          <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 mb-2.5">Step 4 • Key Learning Highlights</div>
+
+          <!-- Experience Level -->
+          <div class="flex flex-wrap gap-2 mb-3">
+            <button type="button" class="chip-btn exp-chip active px-3.5 py-1.5 rounded-lg text-xs font-bold" data-exp="Excellent">
+              🌟 Excellent Experience
+            </button>
+            <button type="button" class="chip-btn exp-chip px-3.5 py-1.5 rounded-lg text-xs font-bold" data-exp="Good">
+              👍 Good &amp; Helpful
+            </button>
+            <button type="button" class="chip-btn exp-chip px-3.5 py-1.5 rounded-lg text-xs font-bold" data-exp="Highly Impressed">
+              ✨ Highly Impressed
+            </button>
+          </div>
+
+          <!-- 2 Essential Highlight Chips -->
+          <div id="highlightsList" class="flex flex-wrap gap-2">
+            <button type="button" class="chip-btn highlight-chip active px-3 py-1.5 rounded-lg text-xs" data-highlight="practical_labs">
+              💻 Hands-on Lab Practicals
+            </button>
+            <button type="button" class="chip-btn highlight-chip active px-3 py-1.5 rounded-lg text-xs" data-highlight="expert_faculty">
+              👨‍🏫 Supportive &amp; Expert Faculty
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 5: LANGUAGE (Fixed Default 3-5 Lines) -->
+        <div class="brand-card p-5 sm:p-6">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Step 5 • Select Language</div>
+            <span class="text-[10px] font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+              📝 Review Length: 3–5 Lines
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+            <button type="button" class="chip-btn lang-btn active p-2.5 rounded-xl text-left text-xs font-medium flex items-center justify-between" data-lang="en">
+              <span>🇬🇧 <strong>English</strong></span>
+              <span class="text-slate-400 text-[10px]">Pure English</span>
+            </button>
+            <button type="button" class="chip-btn lang-btn p-2.5 rounded-xl text-left text-xs font-medium flex items-center justify-between" data-lang="mr">
+              <span>🇮🇳 <strong>मराठी (Marathi)</strong></span>
+              <span class="text-slate-400 text-[10px]">अस्सल मराठी</span>
+            </button>
+            <button type="button" class="chip-btn lang-btn p-2.5 rounded-xl text-left text-xs font-medium flex items-center justify-between" data-lang="hi">
+              <span>🇮🇳 <strong>हिंदी (Hindi)</strong></span>
+              <span class="text-slate-400 text-[10px]">शुद्ध हिंदी</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 6: AI GENERATED REVIEW NOTE + VOICE INPUT + REFRESH + COPY & OPEN GOOGLE -->
+        <div class="brand-card p-5 sm:p-6 border-emerald-200/90 bg-gradient-to-b from-emerald-50/30 to-white shadow-md">
+
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div class="flex items-center gap-2">
+              <span class="flex h-2.5 w-2.5 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
+              </span>
+              <span class="text-xs font-extrabold text-emerald-900 uppercase tracking-wider">AI Generated Review Note</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button type="button" id="voiceReviewBtn" class="text-xs font-bold text-slate-800 hover:text-emerald-900 flex items-center gap-1.5 bg-white hover:bg-emerald-50 border border-emerald-300 px-3 py-1.5 rounded-lg transition shadow-2xs" title="Speak your own review in English, Marathi, or Hindi">
+                <span>🎤</span>
+                <span id="voiceBtnLabel">Voice Over</span>
+              </button>
+
+              <button type="button" id="regenerateBtn" class="text-xs font-bold text-emerald-800 hover:text-emerald-950 flex items-center gap-1.5 bg-emerald-100/80 hover:bg-emerald-200 border border-emerald-300 px-3 py-1.5 rounded-lg transition shadow-2xs">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+                <span>Refresh</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Active Voice Listening Banner -->
+          <div id="voiceStatusBar" class="hidden mb-3 p-3 rounded-xl bg-rose-50 border border-rose-200 flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2 text-xs font-bold text-rose-800">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-600 animate-ping shrink-0"></span>
+              <span id="voiceStatusText">Listening in English... Speak your review now</span>
+            </div>
+            <button type="button" id="stopVoiceBtn" class="px-3 py-1 rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition">
+              ⏹ Stop
+            </button>
+          </div>
+
+          <!-- Editable Review Text Box -->
+          <div class="relative mb-3">
+            <textarea id="reviewText" rows="5" class="w-full p-4 text-xs sm:text-sm text-slate-800 bg-white border border-emerald-200/90 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 font-normal leading-relaxed shadow-2xs transition" placeholder="Your AI or spoken review will appear here..."></textarea>
+
+            <div class="text-[11px] text-slate-400 mt-1.5 flex flex-wrap justify-between items-center gap-1">
+              <span>💡 <em>Tap <strong>Refresh</strong> for another draft, or <strong>🎤 Voice Over</strong> to speak your review!</em></span>
+              <span class="text-emerald-700 font-bold">✓ 3–5 Lines • Pure Language</span>
+            </div>
+          </div>
+
+          <div class="mb-4 flex justify-end">
+            <button id="refreshReviewActionBtn" type="button" class="text-xs text-emerald-700 hover:text-emerald-900 underline font-medium flex items-center gap-1">
+              <span>Not satisfied? Click here to generate another variation ↻</span>
+            </button>
+          </div>
+
+          <!-- 2-in-1 CTA Button -->
+          <div class="pt-1">
+            <button type="button" id="copyAndOpenBtn" class="brand-button-primary pulse-cta w-full py-4 px-6 rounded-xl font-black text-base sm:text-lg flex items-center justify-center gap-3 transition">
+              <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/>
+              </svg>
+              <span>📋 Copy Review &amp; Open Google</span>
+            </button>
+
+            <div class="mt-2.5 text-center text-[11px] text-slate-500 flex items-center justify-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>1-Click: Review copies to clipboard and opens Google Review page automatically</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- EXECUTIVE INSTITUTIONAL PROFILE & CONTACT HUB -->
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden mt-8 transition hover:shadow-md">
+
+      <!-- Top Header Strip + Executive 2-Column Director Cards -->
+      <div class="institute-branding-footer-row">
+
+        <!-- Institute Branding Row -->
+        <div class="institute-top-brand-bar">
+          <div class="brand-lockup-container">
+            <img src="assets/original-logo.jpg" alt="NICE Logo" class="brand-logo-img" style="width: 48px; height: 48px; border-radius: 13px;">
+            <div class="brand-text-block">
+              <div class="brand-title-row">
+                <span class="brand-nice-text" style="font-size: 23px;">NICE</span>
+                <span class="brand-computer-edu-text" style="font-size: 12.5px;">COMPUTER EDUCATION</span>
+              </div>
+              <div class="brand-tagline-text">
+                <span>SCHOOL OF CODING</span>
+                <span class="text-slate-300">•</span>
+                <span class="text-slate-500 font-semibold">WADGAON, YAVATMAL</span>
+              </div>
+            </div>
+          </div>
+
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-[11px] font-bold text-slate-600 shadow-2xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>Direct Counseling &amp; Inquiries</span>
+          </span>
+        </div>
+
+        <!-- Phone Call & WhatsApp Quick Action Cards -->
+        <div class="contact-cards-grid">
+          <!-- Shailesh Sambhe Card -->
+          <div class="contact-card-box">
+            <div class="contact-card-header">
+              <div class="contact-avatar">SS</div>
+              <div class="contact-details">
+                <div class="contact-name">Shailesh Sambhe</div>
+                <div class="contact-phone-num">+91 97675 41889</div>
+              </div>
+            </div>
+            <div class="contact-actions-row">
+              <a href="tel:+919767541889" class="btn-contact-action" title="Call Shailesh Sambhe: +91 97675 41889">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span>Call Now</span>
+              </a>
+              <a href="https://wa.me/919767541889?text=Hello%20Shailesh%20Sir,%20I%20have%20an%20inquiry%20about%20courses%20at%20NICE%20Computer%20Education" target="_blank" class="btn-contact-action wa-btn" title="WhatsApp Shailesh Sambhe">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.797 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.172.109-1.891-.125-.438-.141-1-.328-1.719-.641-3.016-1.297-4.984-4.328-5.141-4.531-.156-.203-1.234-1.641-1.234-3.125s.781-2.219 1.063-2.516c.281-.297.609-.375.813-.375.203 0 .406.016.578.016.188 0 .438-.078.688.516.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.141.328-.281.5-.141.172-.297.375-.422.5-.141.141-.281.297-.125.578.156.281.703 1.156 1.516 1.875 1.047.922 1.922 1.203 2.203 1.344.281.141.438.125.609-.063.172-.188.703-.828.891-1.109.188-.281.375-.234.625-.141.25.094 1.625.766 1.906.906.281.141.469.203.531.328.063.125.063.703-.188 1.406z"/></svg>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Namrata Sambhe Card -->
+          <div class="contact-card-box">
+            <div class="contact-card-header">
+              <div class="contact-avatar">NS</div>
+              <div class="contact-details">
+                <div class="contact-name">Namrata Sambhe</div>
+                <div class="contact-phone-num">+91 97637 17418</div>
+              </div>
+            </div>
+            <div class="contact-actions-row">
+              <a href="tel:+919763717418" class="btn-contact-action" title="Call Namrata Sambhe: +91 97637 17418">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span>Call Now</span>
+              </a>
+              <a href="https://wa.me/919763717418?text=Hello%20Namrata%20Madam,%20I%20have%20an%20inquiry%20about%20courses%20at%20NICE%20Computer%20Education" target="_blank" class="btn-contact-action wa-btn" title="WhatsApp Namrata Sambhe">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.797 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.172.109-1.891-.125-.438-.141-1-.328-1.719-.641-3.016-1.297-4.984-4.328-5.141-4.531-.156-.203-1.234-1.641-1.234-3.125s.781-2.219 1.063-2.516c.281-.297.609-.375.813-.375.203 0 .406.016.578.016.188 0 .438-.078.688.516.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.141.328-.281.5-.141.172-.297.375-.422.5-.141.141-.281.297-.125.578.156.281.703 1.156 1.516 1.875 1.047.922 1.922 1.203 2.203 1.344.281.141.438.125.609-.063.172-.188.703-.828.891-1.109.188-.281.375-.234.625-.141.25.094 1.625.766 1.906.906.281.141.469.203.531.328.063.125.063.703-.188 1.406z"/></svg>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Address & Operational Timings Grid -->
+      <div class="p-5 sm:p-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-600 border-b border-slate-200/80">
+        <div class="flex items-start gap-2.5">
+          <svg class="w-4 h-4 text-rose-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <div>
+            <div class="font-bold text-slate-900 mb-0.5">Location &amp; Campus Address</div>
+            <p class="leading-relaxed">Plot No. 45, Bharathi Layout, Near Darda Nagar, Wadgaon, Yavatmal – 445001</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-2.5">
+          <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div>
+            <div class="font-bold text-slate-900 mb-0.5">Classroom &amp; Lab Timings</div>
+            <p class="leading-relaxed">Mon–Fri: 7:00 AM – 10:00 AM &amp; 5:00 PM – 8:30 PM<br>Sat: 7:00 AM – 10:00 AM &amp; 5:00 PM – 7:30 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Verified Action Links -->
+      <div class="p-4 sm:p-5 bg-white flex flex-wrap items-center justify-between gap-3">
+        <div class="text-[11px] text-slate-400 font-medium">
+          Category: Computer Education, Coding, Programming &amp; IT Training
+        </div>
+
+        <div class="flex items-center gap-2.5 w-full sm:w-auto">
+          <a href="https://maps.app.goo.gl/3Vf5Vw4qnXcjUoPy5" target="_blank" class="flex-1 sm:flex-none px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center gap-1.5 transition border border-slate-200">
+            <svg class="w-3.5 h-3.5 text-rose-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>Google Maps</span>
+          </a>
+          <a href="https://g.page/r/CTKrEmKbJP-dEBM/review" target="_blank" class="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs flex items-center justify-center gap-1.5 transition shadow-2xs">
+            <svg class="w-3.5 h-3.5 text-amber-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>Google Review Page</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- VOICE OVER CONFIRMATION MODAL (Appears if review box already has text) -->
+  <div id="voiceActionModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-slate-100 space-y-4">
+      <div class="flex items-start gap-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg shrink-0">
+          🎤
+        </div>
+        <div>
+          <h3 class="text-base font-extrabold text-slate-900">Voice Over Review</h3>
+          <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+            Review box already has text. Do you want to <strong>delete existing text</strong> or <strong>add your voice review</strong> to it?
+          </p>
+        </div>
+      </div>
+
+      <!-- Language Selector for Voice Recognition -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
+        <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Speak in Language:</div>
+        <div class="grid grid-cols-3 gap-1.5" id="voiceLangSelector">
+          <button type="button" class="chip-btn voice-lang-chip active py-1.5 px-2 rounded-lg text-[11px] font-bold text-center" data-lang="en">🇬🇧 English</button>
+          <button type="button" class="chip-btn voice-lang-chip py-1.5 px-2 rounded-lg text-[11px] font-bold text-center" data-lang="mr">🇮🇳 मराठी</button>
+          <button type="button" class="chip-btn voice-lang-chip py-1.5 px-2 rounded-lg text-[11px] font-bold text-center" data-lang="hi">🇮🇳 हिंदी</button>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <button type="button" id="voiceReplaceBtn" class="w-full py-2.5 px-4 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition">
+          <span>🗑️ Delete Existing &amp; Speak New</span>
+        </button>
+        <button type="button" id="voiceAppendBtn" class="brand-button-primary w-full py-2.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition">
+          <span>➕ Add to Existing Review</span>
+        </button>
+        <button type="button" id="voiceCancelBtn" class="w-full py-2 text-xs text-slate-400 hover:text-slate-600 font-semibold transition">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS INSTRUCTION MODAL -->
+  <div id="successModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl border border-slate-100">
+      <div class="w-13 h-13 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 shadow-inner">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+
+      <h3 class="text-lg font-black text-slate-900">Review Copied to Clipboard!</h3>
+      <p class="text-xs text-slate-600 mt-1 mb-4 leading-relaxed">
+        Google Reviews is ready to open. Complete these quick steps on Google:
+      </p>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-left space-y-2 mb-5 text-xs text-slate-700">
+        <div class="flex items-center gap-2">
+          <span class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center shrink-0">1</span>
+          <span>Tap <strong>⭐⭐⭐⭐⭐ (5 Stars)</strong></span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center shrink-0">2</span>
+          <span>Paste your copied review text into the box</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center shrink-0">3</span>
+          <span>Tap the <strong>📷 Camera</strong> icon to attach photo &amp; tap <strong>Post</strong>!</span>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <button type="button" id="modalOpenGoogleBtn" class="brand-button-primary w-full py-3 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+          <span>🚀 Continue to Google Reviews</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
+        </button>
+        <button type="button" id="modalCloseBtn" class="w-full py-2 text-xs text-slate-400 hover:text-slate-600 font-semibold transition">
+          Dismiss
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE DIRECT CONTACT MODAL (< 960px screens) -->
+  <div id="mobileContactModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-slate-100 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <h3 class="font-bold text-slate-900 text-sm">Direct Institute Contacts</h3>
+        </div>
+        <button type="button" onclick="document.getElementById('mobileContactModal').classList.add('hidden')" class="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition">
+          ✕
+        </button>
+      </div>
+
+      <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/90 space-y-2.5">
+        <div class="flex items-center gap-2.5">
+          <div class="contact-avatar">SS</div>
+          <div class="min-w-0">
+            <div class="font-bold text-xs text-slate-900">Shailesh Sambhe</div>
+            <div class="text-[11px] font-semibold text-slate-500">+91 97675 41889</div>
+          </div>
+        </div>
+        <div class="contact-actions-row">
+          <a href="tel:+919767541889" class="btn-contact-action">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span>Call Now</span>
+          </a>
+          <a href="https://wa.me/919767541889?text=Hello%20Shailesh%20Sir,%20I%20have%20an%20inquiry%20about%20courses%20at%20NICE%20Computer%20Education" target="_blank" class="btn-contact-action wa-btn">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.797 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.172.109-1.891-.125-.438-.141-1-.328-1.719-.641-3.016-1.297-4.984-4.328-5.141-4.531-.156-.203-1.234-1.641-1.234-3.125s.781-2.219 1.063-2.516c.281-.297.609-.375.813-.375.203 0 .406.016.578.016.188 0 .438-.078.688.516.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.141.328-.281.5-.141.172-.297.375-.422.5-.141.141-.281.297-.125.578.156.281.703 1.156 1.516 1.875 1.047.922 1.922 1.203 2.203 1.344.281.141.438.125.609-.063.172-.188.703-.828.891-1.109.188-.281.375-.234.625-.141.25.094 1.625.766 1.906.906.281.141.469.203.531.328.063.125.063.703-.188 1.406z"/></svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/90 space-y-2.5">
+        <div class="flex items-center gap-2.5">
+          <div class="contact-avatar">NS</div>
+          <div class="min-w-0">
+            <div class="font-bold text-xs text-slate-900">Namrata Sambhe</div>
+            <div class="text-[11px] font-semibold text-slate-500">+91 97637 17418</div>
+          </div>
+        </div>
+        <div class="contact-actions-row">
+          <a href="tel:+919763717418" class="btn-contact-action">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span>Call Now</span>
+          </a>
+          <a href="https://wa.me/919763717418?text=Hello%20Namrata%20Madam,%20I%20have%20an%20inquiry%20about%20courses%20at%20NICE%20Computer%20Education" target="_blank" class="btn-contact-action wa-btn">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.797 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.172.109-1.891-.125-.438-.141-1-.328-1.719-.641-3.016-1.297-4.984-4.328-5.141-4.531-.156-.203-1.234-1.641-1.234-3.125s.781-2.219 1.063-2.516c.281-.297.609-.375.813-.375.203 0 .406.016.578.016.188 0 .438-.078.688.516.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.141.328-.281.5-.141.172-.297.375-.422.5-.141.141-.281.297-.125.578.156.281.703 1.156 1.516 1.875 1.047.922 1.922 1.203 2.203 1.344.281.141.438.125.609-.063.172-.188.703-.828.891-1.109.188-.281.375-.234.625-.141.25.094 1.625.766 1.906.906.281.141.469.203.531.328.063.125.063.703-.188 1.406z"/></svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <button type="button" onclick="document.getElementById('mobileContactModal').classList.add('hidden')" class="w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toastNotification" class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white px-4 py-2.5 rounded-xl text-xs font-semibold shadow-xl border border-slate-700 flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300">
+    <span class="text-emerald-400">✓</span>
+    <span id="toastMessage">Review copied to clipboard!</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="max-w-3xl mx-auto px-4 mt-8 pt-4 border-t border-slate-200 text-center text-xs text-slate-400">
+    <div class="flex flex-wrap justify-center items-center gap-4 mb-1.5">
+      <a href="standee.html" target="_blank" class="hover:text-emerald-700 transition font-medium">🖨️ Printable Desk QR Standee</a>
+      <span>•</span>
+      <a href="https://maps.app.goo.gl/3Vf5Vw4qnXcjUoPy5" target="_blank" class="hover:text-emerald-700 transition font-medium">📍 Google Maps</a>
+      <span>•</span>
+      <a href="admin.html" class="hover:text-emerald-700 transition font-medium">🔒 Staff Admin Portal</a>
+    </div>
+    <p>© NICE Computer Education – School of Coding • Wadgaon, Yavatmal – 445001</p>
+  </footer>
+
+  <script src="app.js?v=8.0"></script>
+</body>
+</html>
